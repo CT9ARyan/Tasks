@@ -12,13 +12,16 @@ public class Main {
         Datamanager dataManager = new Datamanager("./data/data.txt");
         ArrayList<Task> tasksData = dataManager.loadData();
 
-        System.out.println("Printing all data ...");
+        /*System.out.println("Printing all data ...");
         printAllData(tasksData);
+        printDataWithStreams(tasksData);*/
 
         System.out.println("Printing deadlines ...");
         printDeadlines(tasksData);
+        printDeadlinesWithStreams(tasksData);
 
         System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
+        System.out.println("Total number of deadlines using streams: " + countDeadlinesWithStreams(tasksData));
 
     }
 
@@ -33,6 +36,7 @@ public class Main {
     }
 
     public static void printAllData(ArrayList<Task> tasksData) {
+        System.out.println("Printing data with iteration: ");
         for (Task t : tasksData) {
             System.out.println(t);
         }
